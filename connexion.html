@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Place - Connexion</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: white; height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .login-container { width: 100%; max-width: 400px; text-align: center; padding: 20px; }
+        h1 { font-size: 48px; margin-bottom: 20px; }
+        .btn { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-size: 14px; }
+        .btn-google { border: 1px solid #ddd; background: white; color: #333; }
+        .btn-facebook { background: #1877f2; color: white; border: none; }
+        .back-link { display: block; margin-top: 30px; color: #888; text-decoration: none; font-size: 13px; }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        :root { --purple-main: #ba68c8; --bg-soft: #fff9fb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-soft); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: white; border-bottom: 1px solid #f0f0f0; }
+        .logo { font-size: 24px; font-weight: 600; color: #d81b60; text-decoration: none; }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { text-decoration: none; color: #888; font-size: 14px; }
+        nav a.active { color: var(--purple-main); font-weight: 600; }
+        .btn-connexion { background: #f06292; color: white; border: none; padding: 10px 25px; border-radius: 25px; text-decoration: none; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        .form-card { background: white; padding: 40px; border-radius: 15px; border: 1px solid #f3e5f5; }
+        .conf-card { background: white; padding: 25px; border-radius: 12px; margin-top: 20px; border: 1px solid #eee; }
+        .tag { font-size: 11px; color: #ba68c8; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <header>
+            <a href="index.html" class="logo">🛡️ Safe Place</a>
+            <nav>
+                <a href="index.html">Accueil</a>
+            <a href="compliment.html">❤️ Compliments</a>
+            <a href="confidence.html" class="active">🤝 Confidences</a>
+            <a href="connexion.html" class="btn-connexion">➜ Connexion</a>
+            </nav>
+        </header>
+    <div class="login-container">
+        <h1>Log In</h1>
+        <p>New to this site? <a href="#" style="color:#007bff; text-decoration:none;">Sign Up</a></p>
+        <div style="margin-top:30px;">
+            <a href="#" class="btn btn-google">Log in with Google</a>
+            <a href="#" class="btn btn-facebook">Log in with Facebook</a>
+            <p style="margin:20px 0; color:#888;">or</p>
+            <a href="#" class="btn btn-google">Log in with Email</a>
+        </div>
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+    </div>
+</body>
+</html>

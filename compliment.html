@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Place - Compliments</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        :root { --pink-main: #f06292; --bg-soft: #fff9fb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-soft); color: #4a4a4a; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: white; border-bottom: 1px solid #f0f0f0; }
+        .logo { font-size: 24px; font-weight: 600; color: #d81b60; text-decoration: none; }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { text-decoration: none; color: #888; font-size: 14px; }
+        nav a.active { color: var(--pink-main); font-weight: 600; }
+        .btn-connexion { background: var(--pink-main); color: white; border: none; padding: 10px 25px; border-radius: 25px; text-decoration: none; }
+        .hero-compliments { text-align: center; padding: 60px 20px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .form-card { background: white; padding: 40px; border-radius: 15px; border: 1px solid #fce4ec; margin-bottom: 40px; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #eee; border-radius: 8px; background: #fafafa; }
+        .btn-submit { width: 100%; background: var(--pink-main); color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; }
+        .message-card { padding: 30px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05); }
+        .msg-yellow { background-color: #fff9c4; } .msg-green { background-color: #e8f5e9; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">🛡️ Safe Place</a>
+        <nav>
+             <a href="index.html">Accueil</a>
+            <a href="compliment.html">❤️ Compliments</a>
+            <a href="confidence.html" class="active">🤝 Confidences</a>
+            <a href="connexion.html" class="btn-connexion">➜ Connexion</a>
+        </nav>
+    </header>
+    <section class="hero-compliments"><h1>Mur de Compliments ❤️</h1></section>
+    <div class="container">
+        <div class="form-card">
+            <h2>Publier un Compliment</h2>
+            <input type="text" placeholder="Titre">
+            <textarea rows="4" placeholder="Votre message..."></textarea>
+            <button class="btn-submit">🚀 Publier</button>
+        </div>
+        <div class="message-card msg-yellow"><h3>tu es belle</h3><p>ne doutte jamais de toi</p></div>
+        <div class="message-card msg-green"><h3>Bravo !</h3><p>Super présentation aujourd'hui.</p></div>
+    </div>
+</body>
+</html>

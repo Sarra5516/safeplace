@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Place - Accueil</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #fff9fb; color: #4a4a4a; scroll-behavior: smooth; }
+        .hero-section { height: 100vh; background: radial-gradient(circle at center, #ffffff 0%, #fcecf4 100%); display: flex; flex-direction: column; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: white; border-bottom: 1px solid #f0f0f0;}
+        .logo { font-size: 24px; font-weight: 600; color: #d81b60; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { text-decoration: none; color: #888; font-size: 14px; }
+        nav a.active { color: #d81b60; font-weight: 600; }
+        .btn-connexion { background-color: #f06292; color: white; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; text-decoration: none; }
+        .hero-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .badge { border: 1px solid #f8bbd0; padding: 6px 20px; border-radius: 50px; font-size: 11px; color: #d81b60; margin-bottom: 20px; }
+        .main-title { font-size: 100px; font-weight: 600; background: linear-gradient(to right, #ec407a, #ba68c8, #ffb74d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .features-section { padding: 100px 50px; display: flex; justify-content: center; gap: 30px; }
+        .card { background: white; padding: 40px 30px; border-radius: 15px; width: 350px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); text-align: left; }
+        .card-1 { border: 2px solid #ff7eb3; } .card-2 { border: 2px solid #ba68c8; } .card-3 { border: 2px solid #4db6ac; }
+        .card h3 { font-size: 22px; margin-bottom: 15px; color: #333; }
+        .card p { font-size: 15px; color: #999; line-height: 1.6; font-style: italic; }
+        .mission-intro { text-align: center; margin-bottom: 60px; }
+        .content-block { max-width: 1100px; margin: 0 auto 50px; background: white; border-radius: 30px; overflow: hidden; display: flex; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .text-side { flex: 1; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .img-side { flex: 1; background-size: cover; background-position: center; min-height: 400px; }
+        .reverse { flex-direction: row-reverse; }
+        .link-btn { color: #f06292; text-decoration: none; font-size: 14px; font-weight: 500; border-bottom: 1px solid #f8bbd0; width: fit-content; margin-top: 15px;}
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <header>
+            
+                <a href="index.html">Accueil</a>
+            <a href="compliment.html">❤️ Compliments</a>
+            <a href="confidence.html" class="active">🤝 Confidences</a>
+            <a href="connexion.html" class="btn-connexion">➜ Connexion</a>
+            </nav>
+        </header>
+        <div class="hero-content">
+            <div class="badge">✨ BIENVEILLANCE & ÉCOUTE 🤝</div>
+            <h1 class="main-title">Safe Place</h1>
+            <p style="color: #999; max-width: 600px; line-height: 1.6;">Un lieu où les mots réconfortent 💬, les compliments s'échangent 🌟 et chaque élève peut se confier en toute sérénité 🤝</p>
+        </div>
+    </div>
+    <section class="features-section">
+        <div class="card card-1"><h3>🛡️ Sécurité</h3><p>Un environnement modéré et protégé.</p></div>
+        <div class="card card-2"><h3>👥 Communauté</h3><p>Renforcez les liens entre élèves.</p></div>
+        <div class="card card-3"><h3>🔒 Anonymat</h3><p>La liberté de s'exprimer sans crainte.</p></div>
+    </section>
+    <div class="content-block">
+        <div class="text-side">
+            <h2>Le Mur de Compliments ✨</h2>
+            <p>Partagez des messages positifs et créez une vague de bienveillance.</p>
+            <a href="compliments.html" class="link-btn">Découvrir les messages ➜</a>
+        </div>
+        <div class="img-side" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1000');"></div>
+    </div>
+    <div class="content-block reverse">
+        <div class="text-side">
+            <h2>L'Espace de Confidences 💜</h2>
+            <p>Un refuge silencieux pour les moments difficiles.</p>
+            <a href="confidences.html" class="link-btn" style="color: #ba68c8;">Accéder à l'espace sûr ➜</a>
+        </div>
+        <div class="img-side" style="background-image: url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?auto=format&fit=crop&q=80&w=1000');"></div>
+    </div>
+</body>
+</html>
