@@ -1,49 +1,181 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safe Place - Compliments</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-        :root { --pink-main: #f06292; --bg-soft: #fff9fb; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-soft); color: #4a4a4a; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: white; border-bottom: 1px solid #f0f0f0; }
-        .logo { font-size: 24px; font-weight: 600; color: #d81b60; text-decoration: none; }
-        nav { display: flex; align-items: center; gap: 30px; }
-        nav a { text-decoration: none; color: #888; font-size: 14px; }
-        nav a.active { color: var(--pink-main); font-weight: 600; }
-        .btn-connexion { background: var(--pink-main); color: white; border: none; padding: 10px 25px; border-radius: 25px; text-decoration: none; }
-        .hero-compliments { text-align: center; padding: 60px 20px; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .form-card { background: white; padding: 40px; border-radius: 15px; border: 1px solid #fce4ec; margin-bottom: 40px; }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #eee; border-radius: 8px; background: #fafafa; }
-        .btn-submit { width: 100%; background: var(--pink-main); color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; }
-        .message-card { padding: 30px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05); }
-        .msg-yellow { background-color: #fff9c4; } .msg-green { background-color: #e8f5e9; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Place - Compliments</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root { --pink-main: #f06292; --bg-soft: #fff9fb; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { background-color: var(--bg-soft); color: #4a4a4a; }
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 60px;
+background: white;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.logo { font-size: 24px; font-weight: 600; color: #d81b60; text-decoration: none; }
+
+nav { display: flex; align-items: center; gap: 30px; }
+
+nav a { text-decoration: none; color: #888; font-size: 14px; }
+
+nav a.active { color: var(--pink-main); font-weight: 600; }
+
+.btn-connexion { background: var(--pink-main); color: white; border: none; padding: 10px 25px; border-radius: 25px; text-decoration: none; }
+
+.hero-compliments { text-align: center; padding: 60px 20px; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+.form-card { background: white; padding: 40px; border-radius: 15px; border: 1px solid #fce4ec; margin-bottom: 40px; }
+
+input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #eee; border-radius: 8px; background: #fafafa; }
+
+.btn-submit { width: 100%; background: var(--pink-main); color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; }
+
+.message-card { padding: 25px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05); }
+
+.receiver { font-size: 13px; color: #888; margin-bottom: 8px; }
+
+.msg-yellow { background-color: #fff9c4; } 
+.msg-green { background-color: #e8f5e9; }
+
+.commentaire-creator {
+font-size: 14px;
+font-style: italic;
+color: #555;
+margin-top: 40px;
+padding: 15px;
+background: #f3e5f5;
+border-radius: 10px;
+border: 1px solid #e1bee7;
+}
+
+.search-bar {
+margin-bottom: 20px;
+padding: 10px;
+width: 100%;
+border-radius: 8px;
+border: 1px solid #ccc;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <a href="index.html" class="logo">🛡️ Safe Place</a>
-        <nav>
-             <a href="index.html">Accueil</a>
-            <a href="compliment.html">❤️ Compliments</a>
-            <a href="confidence.html" class="active">🤝 Confidences</a>
-            <a href="connexion.html" class="btn-connexion">➜ Connexion</a>
-        </nav>
-    </header>
-    <section class="hero-compliments"><h1>Mur de Compliments ❤️</h1></section>
-    <div class="container">
-        <div class="form-card">
-            <h2>Publier un Compliment</h2>
-            <input type="text" placeholder="Titre">
-            <textarea rows="4" placeholder="Votre message..."></textarea>
-            <button class="btn-submit">🚀 Publier</button>
-        </div>
-        <div class="message-card msg-yellow"><h3>tu es belle</h3><p>ne doutte jamais de toi</p></div>
-        <div class="message-card msg-green"><h3>Bravo !</h3><p>Super présentation aujourd'hui.</p></div>
-    </div>
+
+<header>
+<a href="index.html" class="logo">🛡️ Safe Place</a>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="compliment.html" class="active">❤️ Compliments</a>
+<a href="confidence.html">🤝 Confidences</a>
+<a href="connexion.html" class="btn-connexion">➜ Connexion</a>
+</nav>
+</header>
+
+<section class="hero-compliments">
+<h1>Mur de Compliments ❤️</h1>
+</section>
+
+<div class="container">
+
+<div class="form-card">
+<h2>Envoyer un Compliment</h2>
+<input type="text" id="title" placeholder="Titre du compliment">
+<input type="text" id="receiver" placeholder="À qui veux-tu envoyer ce compliment ?">
+<textarea rows="4" id="message" placeholder="Votre message..."></textarea>
+<button class="btn-submit" onclick="publishCompliment()">🚀 Publier</button>
+</div>
+
+<!-- Barre de recherche -->
+<input type="text" class="search-bar" id="searchName" placeholder="Rechercher par nom..." onkeyup="filterCompliments()">
+
+<div id="complimentsWall">
+
+<!-- Compliments déjà publiés pour le visuel -->
+<div class="message-card msg-yellow">
+<div class="receiver">Pour : <strong>Léa</strong></div>
+<h3>Bravo !</h3>
+<p>Super présentation aujourd'hui !</p>
+</div>
+
+<div class="message-card msg-green">
+<div class="receiver">Pour : <strong>Tom</strong></div>
+<h3>Bien joué</h3>
+<p>Ta persévérance est incroyable !</p>
+</div>
+
+<div class="message-card msg-yellow">
+<div class="receiver">Pour : <strong>Sara</strong></div>
+<h3>Continue comme ça</h3>
+<p>Ta créativité inspire les autres.</p>
+</div>
+
+</div>
+
+<div class="commentaire-creator">
+J'ai hâte pour vos retours ! - Sarra, la créatrice
+</div>
+
+</div>
+
+<script>
+function publishCompliment() {
+const title = document.getElementById("title").value;
+const receiver = document.getElementById("receiver").value;
+const message = document.getElementById("message").value;
+
+if (title.trim() === "" || receiver.trim() === "" || message.trim() === "") {
+alert("Merci de remplir tous les champs.");
+return;
+}
+
+const wall = document.getElementById("complimentsWall");
+
+const newCard = document.createElement("div");
+newCard.classList.add("message-card");
+
+const colors = ["msg-yellow", "msg-green"];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+newCard.classList.add(randomColor);
+
+newCard.innerHTML = `
+<div class="receiver">Pour : <strong>${receiver}</strong></div>
+<h3>${title}</h3>
+<p>${message}</p>
+`;
+
+wall.prepend(newCard);
+
+document.getElementById("title").value = "";
+document.getElementById("receiver").value = "";
+document.getElementById("message").value = "";
+}
+
+function filterCompliments() {
+const input = document.getElementById("searchName").value.toLowerCase();
+const cards = document.querySelectorAll("#complimentsWall .message-card");
+
+cards.forEach(card => {
+const receiver = card.querySelector(".receiver strong").textContent.toLowerCase();
+if (receiver.includes(input)) {
+card.style.display = "block";
+} else {
+card.style.display = "none";
+}
+});
+}
+</script>
+
 </body>
 </html>
