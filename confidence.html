@@ -4,200 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Safe Place - Confidences</title>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-:root {
---purple-main: #ba68c8;
---bg-soft: #fff9fb;
-}
-
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
-}
-
-body {
-background-color: var(--bg-soft);
-}
-
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px 60px;
-background: white;
-border-bottom: 1px solid #f0f0f0;
-}
-
-.logo {
-font-size: 24px;
-font-weight: 600;
-color: #d81b60;
-text-decoration: none;
-}
-
-nav {
-display: flex;
-align-items: center;
-gap: 30px;
-}
-
-nav a {
-text-decoration: none;
-color: #888;
-font-size: 14px;
-}
-
-nav a.active {
-color: var(--purple-main);
-font-weight: 600;
-}
-
-.btn-connexion {
-background: #f06292;
-color: white;
-border: none;
-padding: 10px 25px;
-border-radius: 25px;
-text-decoration: none;
-}
-
-.container {
-max-width: 800px;
-margin: 40px auto;
-padding: 20px;
-}
-
-.form-card {
-background: white;
-padding: 40px;
-border-radius: 15px;
-border: 1px solid #f3e5f5;
-}
-
-.conf-card {
-background: white;
-padding: 25px;
-border-radius: 12px;
-margin-top: 20px;
-border: 1px solid #eee;
-}
-
-.tag {
-font-size: 11px;
-color: #ba68c8;
-font-weight: 600;
-}
-
-.option {
-margin-top: 10px;
-margin-bottom: 10px;
-}
-
-#nameField {
-display: none;
-margin-top: 10px;
-}
-
-input, textarea {
-width: 100%;
-padding: 12px;
-border-radius: 8px;
-border: 1px solid #eee;
-margin-top: 10px;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    :root { 
+        --purple-main: #ba68c8; 
+        --bg-soft: #fff9fb; 
+        --green-safe: #00FFFF; /* turquoise pour le rectangle */
+        --red-alert: #f44336; 
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--bg-soft); }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: white; border-bottom: 1px solid #f0f0f0; }
+    .logo { font-size: 24px; font-weight: 600; color: #d81b60; text-decoration: none; }
+    nav { display: flex; align-items: center; gap: 30px; }
+    nav a { text-decoration: none; color: #888; font-size: 14px; }
+    nav a.active { color: var(--purple-main); font-weight: 600; }
+    .btn-connexion { background: #f06292; color: white; border: none; padding: 10px 25px; border-radius: 25px; text-decoration: none; }
+    .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+    .form-card { background: white; padding: 40px; border-radius: 15px; border: 1px solid #f3e5f5; }
+    .safe-msg { 
+        margin-top: 10px; 
+        color: black; 
+        font-size: 14px; 
+        display: flex; 
+        align-items: center; 
+        gap: 5px; 
+        background-color: var(--green-safe); 
+        padding: 15px; 
+        border-radius: 10px;
+        border: 1px solid #00cccc;
+    }
+    .alert-msg { 
+        margin-top: 15px; 
+        color: var(--red-alert); 
+        font-size: 14px; 
+        display: none; 
+        gap:5px; 
+    }
+    select, textarea, button { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; }
+    button { background:var(--purple-main); color:white; border:none; padding:15px; border-radius:10px; cursor:pointer; font-size: 16px; }
+    button:hover { opacity: 0.9; }
 </style>
 </head>
-
 <body>
-
 <header>
-<a href="index.html" class="logo">🛡️ Safe Place</a>
-<nav>
-<a href="index.html">Accueil</a>
-<a href="compliment.html">❤️ Compliments</a>
-<a href="confidence.html" class="active">🤝 Confidences</a>
-<a href="connexion.html" class="btn-connexion">➜ Connexion</a>
-</nav>
+    <a href="index.html" class="logo">🛡️ Safe Place</a>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="compliment.html">❤️ Compliments</a>
+        <a href="confidence.html" class="active">🤝 Confidences</a>
+        <a href="connexion.html" class="btn-connexion">➜ Connexion</a>
+    </nav>
 </header>
 
 <div class="container">
+    <div class="form-card">
+        <h2>Partager une Confidence 🔒</h2>
+        <form id="conf-form">
+            <label for="category">Catégorie *</label>
+            <select id="category" required>
+                <option value="">Sélectionnez une catégorie</option>
+                <option value="harcelement">Harcèlement</option>
+                <option value="difficulte">Difficulté scolaire</option>
+                <option value="relations">Relations</option>
+                <option value="sante">Santé mentale</option>
+                <option value="autre">Autre</option>
+            </select>
+            <input type="text" id="other-category" placeholder="Précisez la catégorie" style="display:none; margin-bottom:15px;">
 
-<div class="form-card">
-<h2>Partager une Confidence 🔒</h2>
+            <label for="message">Votre message *</label>
+            <textarea id="message-input" rows="5" placeholder="Exprimez-vous librement et en toute confidentialité..." required></textarea>
 
-<textarea id="message" rows="5" placeholder="Exprimez-vous en toute sécurité..."></textarea>
+            <div class="safe-msg">🛡️ Votre anonymat est garanti. Aucune information personnelle n'est collectée. Les messages sont modérés par l'équipe éducative pour assurer un environnement sûr.</div>
 
-<div class="option">
-<label>
-<input type="radio" name="type" value="anonyme" checked onclick="toggleName()"> Anonyme
-</label>
-<br>
-<label>
-<input type="radio" name="type" value="signe" onclick="toggleName()"> Signé
-</label>
-</div>
+            <button type="submit">🚀 Envoyer</button>
+        </form>
+        <div class="alert-msg" id="alert-msg">⚠️ Si vous êtes en danger immédiat, contactez immédiatement un adulte de confiance ou les services d'urgence.</div>
+    </div>
 
-<div id="nameField">
-<input type="text" id="username" placeholder="Écris ton prénom ou pseudo">
-</div>
-
-<button onclick="postMessage()" style="width:100%; background:var(--purple-main); color:white; border:none; padding:15px; border-radius:10px; cursor:pointer;">
-🚀 Envoyer
-</button>
-</div>
-
-<div id="messages"></div>
-
+    <div id="messages-container"></div>
 </div>
 
 <script>
-function toggleName() {
-const type = document.querySelector('input[name="type"]:checked').value;
-const nameField = document.getElementById("nameField");
+    const confForm = document.getElementById('conf-form');
+    const messageInput = document.getElementById('message-input');
+    const messagesContainer = document.getElementById('messages-container');
+    const categorySelect = document.getElementById('category');
+    const otherCategory = document.getElementById('other-category');
+    const alertMsg = document.getElementById('alert-msg');
 
-if (type === "signe") {
-nameField.style.display = "block";
-} else {
-nameField.style.display = "none";
-}
-}
+    // Afficher ou cacher le champ autre catégorie
+    categorySelect.addEventListener('change', () => {
+        if(categorySelect.value === "autre") {
+            otherCategory.style.display = "block";
+        } else {
+            otherCategory.style.display = "none";
+            otherCategory.value = "";
+        }
+    });
 
-function postMessage() {
-const message = document.getElementById("message").value;
-const username = document.getElementById("username").value;
-const type = document.querySelector('input[name="type"]:checked').value;
-const messages = document.getElementById("messages");
+    confForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-if (message.trim() === "") {
-alert("Écris une confidence avant d'envoyer.");
-return;
-}
+        let message = messageInput.value.trim();
+        let category = categorySelect.value === "autre" ? otherCategory.value || "Autre" : categorySelect.options[categorySelect.selectedIndex].text;
 
-let author = "Anonyme";
+        if(message === "" || category === "") return;
 
-if (type === "signe" && username.trim() !== "") {
-author = username;
-}
+        // Créer le message affiché (toujours anonyme)
+        const div = document.createElement('div');
+        div.classList.add('conf-card');
+        div.innerHTML = `<span class="tag">${category.toUpperCase()}</span><p><strong>Anonyme :</strong> ${message}</p>`;
+        messagesContainer.prepend(div);
 
-const newMessage = document.createElement("div");
-newMessage.className = "conf-card";
-newMessage.innerHTML = `
-<span class="tag">CONFIDENCE</span>
-<p>"${message}"</p>
-<small>— ${author}</small>
-`;
+        // Réinitialiser le formulaire
+        messageInput.value = "";
+        categorySelect.value = "";
+        otherCategory.value = "";
+        otherCategory.style.display = "none";
 
-messages.prepend(newMessage);
-
-document.getElementById("message").value = "";
-document.getElementById("username").value = "";
-}
+        // Afficher le message d'urgence après l'envoi
+        alertMsg.style.display = "flex";
+        alertMsg.scrollIntoView({behavior: "smooth"});
+    });
 </script>
-
 </body>
 </html>
