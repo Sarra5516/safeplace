@@ -1,43 +1,203 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safe Place - Confidences</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-        :root { --purple-main: #ba68c8; --bg-soft: #fff9fb; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-soft); }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: white; border-bottom: 1px solid #f0f0f0; }
-        .logo { font-size: 24px; font-weight: 600; color: #d81b60; text-decoration: none; }
-        nav { display: flex; align-items: center; gap: 30px; }
-        nav a { text-decoration: none; color: #888; font-size: 14px; }
-        nav a.active { color: var(--purple-main); font-weight: 600; }
-        .btn-connexion { background: #f06292; color: white; border: none; padding: 10px 25px; border-radius: 25px; text-decoration: none; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
-        .form-card { background: white; padding: 40px; border-radius: 15px; border: 1px solid #f3e5f5; }
-        .conf-card { background: white; padding: 25px; border-radius: 12px; margin-top: 20px; border: 1px solid #eee; }
-        .tag { font-size: 11px; color: #ba68c8; font-weight: 600; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Place - Confidences</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+--purple-main: #ba68c8;
+--bg-soft: #fff9fb;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: var(--bg-soft);
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 60px;
+background: white;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+font-size: 24px;
+font-weight: 600;
+color: #d81b60;
+text-decoration: none;
+}
+
+nav {
+display: flex;
+align-items: center;
+gap: 30px;
+}
+
+nav a {
+text-decoration: none;
+color: #888;
+font-size: 14px;
+}
+
+nav a.active {
+color: var(--purple-main);
+font-weight: 600;
+}
+
+.btn-connexion {
+background: #f06292;
+color: white;
+border: none;
+padding: 10px 25px;
+border-radius: 25px;
+text-decoration: none;
+}
+
+.container {
+max-width: 800px;
+margin: 40px auto;
+padding: 20px;
+}
+
+.form-card {
+background: white;
+padding: 40px;
+border-radius: 15px;
+border: 1px solid #f3e5f5;
+}
+
+.conf-card {
+background: white;
+padding: 25px;
+border-radius: 12px;
+margin-top: 20px;
+border: 1px solid #eee;
+}
+
+.tag {
+font-size: 11px;
+color: #ba68c8;
+font-weight: 600;
+}
+
+.option {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+#nameField {
+display: none;
+margin-top: 10px;
+}
+
+input, textarea {
+width: 100%;
+padding: 12px;
+border-radius: 8px;
+border: 1px solid #eee;
+margin-top: 10px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <a href="index.html" class="logo">🛡️ Safe Place</a>
-        <nav>
-           <a href="index.html">Accueil</a>
-            <a href="compliment.html">❤️ Compliments</a>
-            <a href="confidence.html" class="active">🤝 Confidences</a>
-            <a href="connexion.html" class="btn-connexion">➜ Connexion</a>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="form-card">
-            <h2>Partager une Confidence 🔒</h2>
-            <textarea rows="5" style="width:100%; margin:20px 0; padding:15px; border-radius:8px; border:1px solid #eee;" placeholder="Exprimez-vous en toute sécurité..."></textarea>
-            <button style="width:100%; background:var(--purple-main); color:white; border:none; padding:15px; border-radius:10px; cursor:pointer;">🚀 Envoyer</button>
-        </div>
-        <div class="conf-card"><span class="tag">STRESS SCOLAIRE</span><p>"Je me sens un peu perdu en ce moment..."</p></div>
-    </div>
+
+<header>
+<a href="index.html" class="logo">🛡️ Safe Place</a>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="compliment.html">❤️ Compliments</a>
+<a href="confidence.html" class="active">🤝 Confidences</a>
+<a href="connexion.html" class="btn-connexion">➜ Connexion</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="form-card">
+<h2>Partager une Confidence 🔒</h2>
+
+<textarea id="message" rows="5" placeholder="Exprimez-vous en toute sécurité..."></textarea>
+
+<div class="option">
+<label>
+<input type="radio" name="type" value="anonyme" checked onclick="toggleName()"> Anonyme
+</label>
+<br>
+<label>
+<input type="radio" name="type" value="signe" onclick="toggleName()"> Signé
+</label>
+</div>
+
+<div id="nameField">
+<input type="text" id="username" placeholder="Écris ton prénom ou pseudo">
+</div>
+
+<button onclick="postMessage()" style="width:100%; background:var(--purple-main); color:white; border:none; padding:15px; border-radius:10px; cursor:pointer;">
+🚀 Envoyer
+</button>
+</div>
+
+<div id="messages"></div>
+
+</div>
+
+<script>
+function toggleName() {
+const type = document.querySelector('input[name="type"]:checked').value;
+const nameField = document.getElementById("nameField");
+
+if (type === "signe") {
+nameField.style.display = "block";
+} else {
+nameField.style.display = "none";
+}
+}
+
+function postMessage() {
+const message = document.getElementById("message").value;
+const username = document.getElementById("username").value;
+const type = document.querySelector('input[name="type"]:checked').value;
+const messages = document.getElementById("messages");
+
+if (message.trim() === "") {
+alert("Écris une confidence avant d'envoyer.");
+return;
+}
+
+let author = "Anonyme";
+
+if (type === "signe" && username.trim() !== "") {
+author = username;
+}
+
+const newMessage = document.createElement("div");
+newMessage.className = "conf-card";
+newMessage.innerHTML = `
+<span class="tag">CONFIDENCE</span>
+<p>"${message}"</p>
+<small>— ${author}</small>
+`;
+
+messages.prepend(newMessage);
+
+document.getElementById("message").value = "";
+document.getElementById("username").value = "";
+}
+</script>
+
 </body>
 </html>
